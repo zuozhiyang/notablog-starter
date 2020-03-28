@@ -54,7 +54,7 @@
   </header>
   <article class="ArticleList">
     {{each(options.pages)}}
-      {{if(@this.publish && @this.inList)}}
+      {{if(@this.publish && @this.inList && @this.url!="blog.html")}}
     <article class="Article">
       <h3 class="Article__Title">
             {{@this.iconHTML}}

@@ -10,6 +10,7 @@ Assuming you setup your index page with url `blog` (example: https://www.notion.
 
 
 ```
+npm i -g vwxyzjn_notablog
 notablog generate .
 bash posthook.sh
 notablog preview .
