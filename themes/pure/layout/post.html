@@ -35,17 +35,23 @@
 
 <body>
   <nav class="Navbar">
-    <a href="index.html">
-      <div class="Navbar__Btn">{{siteMeta.iconHTML}} <span>Home</span></div>
-    </a>
     {{each(options.siteMeta.pages)}}
     {{if(@this.publish && @this.inMenu)}}
-    <span class="Navbar__Delim">&centerdot;</span>
-    <a href="{{@this.url}}">
-      <div class="Navbar__Btn">{{@this.iconHTML}} <span>{{@this.title}}</span></div>
-    </a>
+      {{if(@this.url!="blog.html")}}
+      <a href="{{@this.url}}">
+        <div class="Navbar__Btn">{{@this.iconHTML}} <span>{{@this.title}}</span></div>
+      </a>
+      {{#else}}
+      <a href="index.html">
+        <div class="Navbar__Btn">{{@this.iconHTML}} <span>{{@this.title}}</span></div>
+      </a>
+      {{/if}}
     {{/if}}
     {{/each}}
+    <span class="Navbar__Delim">&centerdot;</span>
+    <a href="blog.html">
+      <div class="Navbar__Btn">{{siteMeta.iconHTML}} <span>Blog</span></div>
+    </a>
   </nav>
   <header class="Header">
       {{if(options.post.cover)}}
@@ -76,8 +82,8 @@
   <footer class="Footer">
         <div>&copy; {{siteMeta.title}} 2019</div>
         <div>&centerdot;</div>
-        <div>Powered by <a href="https://github.com/dragonman225/notablog" target="_blank"
-            rel="noopener noreferrer">Notablog</a>.
+        <div>Powered by <a href="https://github.com/vwxyzjn/notablog-starter" target="_blank"
+            rel="noopener noreferrer">Notablog Customized by Costa Huang </a>.
         </div>
     </footer>
 </body>
